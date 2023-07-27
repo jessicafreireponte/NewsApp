@@ -1,4 +1,5 @@
 import useNewsAll from "../hooks/useNewsAll";
+import { Loading } from "./Loading";
 import "./styles/Section.css";
 
 export const SecionePrincipalComponent = () => {
@@ -6,7 +7,7 @@ export const SecionePrincipalComponent = () => {
   console.log(news);
 
   if (loading) {
-    return <p>Cargando noticias...</p>;
+    return <Loading />;
   }
 
   if (error) {
