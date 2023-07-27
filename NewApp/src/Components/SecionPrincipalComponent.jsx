@@ -1,10 +1,12 @@
+import { useState } from "react";
+import { format } from "date-fns";
 import useNewsAll from "../hooks/useNewsAll";
 import { Loading } from "./Loading";
 import "./styles/Section.css";
 
 export const SecionePrincipalComponent = () => {
   const { news, loading, error } = useNewsAll();
-  console.log(news);
+  const [salir, setSalir] = useState(false);
 
   if (loading) {
     return <Loading />;
@@ -18,6 +20,11 @@ export const SecionePrincipalComponent = () => {
     return <p>No se encontraron noticias.</p>;
   }
 
+  const hangleToggle = () => {
+    console.log("no va me cago en la puta");
+    setSalir(!salir);
+  };
+
   return (
     <section>
       <ul className="container">
@@ -26,13 +33,24 @@ export const SecionePrincipalComponent = () => {
             <header>
               <h2>{e.title} </h2>
               <h5>{e.description} </h5>
-              <p>{e.publishedAt} </p>
+              <p>{format(new Date(e.publishedAt), "dd-MM-yyyy - HH:mm")} </p>
             </header>
-            <img src={e.urlToImage} onClick={e.url} />
+            <img src={e.urlToImage} onClick={hangleToggle} />
             <article>
               {e.content}
               <h6>{e.source.name} </h6>
             </article>
+            <aside className={salir && "visible"}>
+              <div className={salir && "visible"}>
+                ¿Desea salir a un enlace externo?
+                <span>
+                  <button>
+                    <a href={e.url}>Sí</a>
+                  </button>
+                  <button onClick={hangleToggle}>No</button>
+                </span>
+              </div>
+            </aside>
           </li>
         ))}
       </ul>

@@ -2,6 +2,14 @@ section {
   max-height: 100%;
   overflow-y: scroll;
 }
+section.visible {
+  background-color: rgba(0, 0, 0, 0.7); /* Color oscuro semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
 
 section ul.container {
   text-align: justify;
@@ -30,4 +38,37 @@ section ul.container li img {
   display: block;
   width: 80%;
   cursor: pointer;
+}
+
+aside div {
+  display: none;
+}
+aside.visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: rgba(156, 155, 155, 0.11);
+}
+
+aside.visible div.visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+  gap: 1.2rem;
+  margin: 0 10%;
+  width: 80%;
+  background-color: rgba(46, 46, 46, 0.801);
+  border-radius: 15px;
+}
+aside.visible div button {
+  margin: 0 25px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: none;
 }
