@@ -1,0 +1,33 @@
+section {
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+section ul.container {
+  text-align: justify;
+  padding: 0;
+  margin: 0;
+}
+
+section ul.container li {
+  list-style: none;
+  padding: 1.2rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+section ul.container li header {
+  width: 100%;
+  padding: 0;
+  border: none;
+  text-align: start;
+}
+
+section ul.container li img {
+  display: block;
+  width: 80%;
+  cursor: pointer;
+}

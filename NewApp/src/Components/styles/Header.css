@@ -1,0 +1,41 @@
+header {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menuHamburgesa {
+  list-style: none;
+  padding: 0 0 0 10px;
+  margin: 0;
+  position: absolute;
+  top: 60px;
+  left: -100%;
+  width: 200px;
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+}
+
+.menuHamburgesa h3 {
+  margin-left: 10px;
+}
+
+.menuHamburgesa li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.menuHamburgesa li:hover {
+  background-color: #8a8989;
+  color: #f1f1f1;
+}
+
+.visible {
+  left: 0;
+}
