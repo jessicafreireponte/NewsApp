@@ -13,7 +13,7 @@ export const HeaderComponent = () => {
   };
 
   return (
-    <header>
+    <header className="headerComponent">
       <nav>
         <box-icon
           name="menu"
@@ -30,6 +30,7 @@ export const HeaderComponent = () => {
           <li>Deportes</li>
         </ul>
       </nav>
+      <img className="logo" src="./logo.jpg" />
     </header>
   );
 };
